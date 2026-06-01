@@ -16,8 +16,8 @@ export default defineConfig(() => {
           globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2,json}'],
         },
         manifest: {
-          name: "會會分帳手機 WebApp",
-          short_name: "會會分帳",
+          name: "咘咘株式會社 WebApp",
+          short_name: "咘咘株式會社",
           description: "與朋友隨時記帳、雲端多人即時同步、最少轉帳還款算法與公布欄提醒的手機 WebApp",
           theme_color: "#F8F5EE",
           background_color: "#F8F5EE",
