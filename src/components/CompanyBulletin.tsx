@@ -141,7 +141,7 @@ export default function CompanyBulletin() {
           <div className="flex justify-between items-center mb-3">
             <h2 className="text-base font-bold font-sans text-[#2A2421] flex items-center gap-1.5">
               <CalendarDays className="w-4.5 h-4.5 text-amber-500" />
-              <span>會會約定簿</span>
+              <span>咘咘行事曆</span>
             </h2>
             <div className="flex items-center gap-1.5">
               <button 
