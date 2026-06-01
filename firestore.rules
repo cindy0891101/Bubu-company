@@ -1,0 +1,52 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Global Catch-All Deny Net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Is valid identifier guard
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    // Auth validation
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // Company workspace controls
+    match /companies/{companyId} {
+      allow get: if isSignedIn() && isValidId(companyId);
+      allow create, update: if isSignedIn() && isValidId(companyId) 
+        && request.resource.data.keys().hasAll(['id', 'name'])
+        && request.resource.data.name is string && request.resource.data.name.size() <= 100;
+      
+      // Members subcollection
+      match /members/{memberId} {
+        allow read: if isSignedIn() && isValidId(companyId);
+        allow write: if isSignedIn() && isValidId(companyId) && isValidId(memberId);
+      }
+
+      // Schedules subcollection
+      match /schedules/{scheduleId} {
+        allow read: if isSignedIn() && isValidId(companyId);
+        allow write: if isSignedIn() && isValidId(companyId) && isValidId(scheduleId);
+      }
+
+      // Expenses subcollection
+      match /expenses/{expenseId} {
+        allow read: if isSignedIn() && isValidId(companyId);
+        allow write: if isSignedIn() && isValidId(companyId) && isValidId(expenseId);
+      }
+
+      // Repayments subcollection
+      match /repayments/{repaymentId} {
+        allow read: if isSignedIn() && isValidId(companyId);
+        allow write: if isSignedIn() && isValidId(companyId) && isValidId(repaymentId);
+      }
+    }
+  }
+}
