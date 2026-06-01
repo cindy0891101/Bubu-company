@@ -67,64 +67,27 @@ export function CompanyProvider({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
-  // Read active connection G-code session on init, defaulting to 'SPLIT-GROUP' to bypass login gate for first-time users
+  // Read active connection G-code session on init, only auto-loading if a valid room code is found in localStorage
   useEffect(() => {
     const savedCode = localStorage.getItem('g_code_session');
     const savedMember = localStorage.getItem('g_member_session');
     const isLoggedOut = localStorage.getItem('g_is_logged_out') === 'true';
 
-    // If user explicitly chose to log out and there's no saved company code now, don't auto-boot
-    if (isLoggedOut && !savedCode) {
+    // If there's no saved company code or the user explicitly chose to log out, don't auto-boot
+    if (!savedCode || isLoggedOut) {
       return;
     }
 
-    const codeToLoad = savedCode || 'SPLIT-GROUP';
-    
     const autoBoot = async () => {
       try {
         await ensureAuth();
-        let success = await joinCompany(codeToLoad);
-        if (!success && codeToLoad === 'SPLIT-GROUP') {
-          // If the default group doesn't exist yet, automatically provision it
-          success = await createNewCompany("共享會盤", "SPLIT-GROUP");
-          if (success) {
-            // Add initial active team members to showcase statistics immediately
-            const activeLeaderId = `MEM-LEADER`;
-            const activeMemberId2 = `MEM-CAT`;
-            
-            await setDoc(doc(db, 'companies', 'SPLIT-GROUP', 'members', activeLeaderId), {
-              companyId: 'SPLIT-GROUP',
-              name: "創始隊長",
-              avatarUrl: "🐯",
-              roleGroup: "營運",
-              linePayInfo: "0912345678",
-              createdAt: new Date().toISOString()
-            });
-
-            await setDoc(doc(db, 'companies', 'SPLIT-GROUP', 'members', activeMemberId2), {
-              companyId: 'SPLIT-GROUP',
-              name: "小貓隊員",
-              avatarUrl: "🐱",
-              roleGroup: "設計",
-              linePayInfo: "",
-              createdAt: new Date().toISOString()
-            });
-
-            // Auto-bind leader identity if none is selected
-            if (!savedMember) {
-              setMyMemberId(activeLeaderId);
-            }
-          }
-        } else if (success && savedMember) {
+        const success = await joinCompany(savedCode);
+        if (success && savedMember) {
           setMyMemberIdState(savedMember);
-        } else if (success && !savedMember) {
-          // Auto-bind to the first available member in the group to avoid the identity screen too!
-          // We can let the user switch via "公司成員" tab easily if needed.
-          setMyMemberId('MEM-LEADER');
         }
       } catch (err) {
         console.error("Auto boot failed:", err);
-        setErrorMsg("自動載入會社失敗，請手動整理重試。");
+        setErrorMsg("自動載入會社失敗，請確認網路連線。");
       }
     };
 
