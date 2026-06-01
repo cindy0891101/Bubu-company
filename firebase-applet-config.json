@@ -1,10 +1,9 @@
 {
-  "projectId": "fi-travel",
-  "appId": "1:158292900207:web:8370af893d06ca2188109a",
-  "apiKey": "AIzaSyC9qgtxnZ6qj0KCP0GLRi_rrnAOqkisEno",
-  "authDomain": "fi-travel.firebaseapp.com",
-  "firestoreDatabaseId": "ai-studio-b95cc044-3766-4311-92e1-6d150cd23cc3",
-  "storageBucket": "fi-travel.firebasestorage.app",
-  "messagingSenderId": "158292900207",
-  "measurementId": ""
+  "projectId": "bubucompany-759a0",
+  "appId": "1:553488054904:web:6c44b1295ec875cd0b8b8d",
+  "apiKey": "AIzaSyBs3aPzwIiHs42JvxFmtwqLy-v5DV22CZ4",
+  "authDomain": "bubucompany-759a0.firebaseapp.com",
+  "storageBucket": "bubucompany-759a0.firebasestorage.app",
+  "messagingSenderId": "553488054904",
+  "measurementId": "G-F1T6DCLEPT"
 }
