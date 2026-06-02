@@ -96,10 +96,10 @@ function LedgerAppContent() {
         >
           {/* Whimsical branding head */}
           <div className="text-center space-y-2 mb-6">
-            <span className="text-5xl inline-block animate-bounce">🥐</span>
-            <h1 className="text-2xl font-black text-[#2A2421] tracking-tight">會會拆帳！手機 WebApp</h1>
+            <span className="text-5xl inline-block animate-bounce">🏦</span>
+            <h1 className="text-2xl font-black text-[#2A2421] tracking-tight">咘咘株式會社</h1>
             <p className="text-xs text-amber-900 font-bold max-w-[280px] mx-auto leading-relaxed">
-              與好朋友合夥開公司？出遊分帳總是不清不楚？一鍵共享，雲端即時多人同步！
+              歡迎來到咘咘株式會社，一鍵共享，雲端即時多人同步！
             </p>
           </div>
 
@@ -123,19 +123,16 @@ function LedgerAppContent() {
                 <div className="space-y-3">
                   <div>
                     <label className="block text-xs font-black text-amber-800 mb-1">
-                      🔑 輸入朋友分享的「公司共享代碼 / Code」
+                      🔑 輸入朋友分享的「共享代碼 / Code」
                     </label>
                     <input 
                       type="text" 
-                      placeholder="例如: OURGROUP777"
+                      placeholder="例如: BUBUCOMPANY"
                       value={joinCodeInput}
                       onChange={(e) => setJoinCodeInput(e.target.value)}
                       className="w-full px-3 py-2 border border-[#2A2421] rounded-xl bg-white text-center font-black placeholder-gray-300 text-[#2A2421] text-sm outline-none"
                       required
                     />
-                    <p className="text-[10px] text-gray-400 font-semibold text-center mt-1">
-                      * 基於 Cloudflare 與 Firebase Firestore 即時通道，輸入代碼即可連線 *
-                    </p>
                   </div>
                 </div>
 
@@ -177,7 +174,7 @@ function LedgerAppContent() {
                     </label>
                     <input 
                       type="text" 
-                      placeholder="例如: 橘子貓創意工作室"
+                      placeholder="例如: 咘咘株式會社"
                       value={newCompanyName}
                       onChange={(e) => setNewCompanyName(e.target.value)}
                       className="w-full px-3 py-1.5 text-xs border border-[#2A2421] rounded-xl bg-white font-bold text-[#2A2421] outline-none"
@@ -281,10 +278,10 @@ function LedgerAppContent() {
                 onChange={(e) => setNewTeammateRole(e.target.value)}
                 className="px-1.5 py-1.5 border border-[#2A2421] bg-white rounded-lg text-xs font-bold outline-none text-[#2A2421]"
               >
-                <option value="一般">一般</option>
+                <option value="貴賓">貴賓</option>
                 <option value="財務">財務</option>
-                <option value="營運">營運</option>
-                <option value="設計">設計</option>
+                <option value="營運長">營運長</option>
+                <option value="股東">股東</option>
               </select>
             </div>
 
@@ -323,7 +320,11 @@ function LedgerAppContent() {
         <div className="max-w-6xl mx-auto flex justify-between items-center gap-2">
           
           <div className="flex items-center gap-1.5">
-            <span className="text-2xl">☕</span>
+           <img
+              src="/logo.png"
+              alt="咘咘株式會社"
+              className="w-10 h-10 rounded-full object-cover"
+            />
             <div>
               <h1 className="text-xs font-black text-[#2A2421] leading-tight flex items-center gap-1">
                 <span>{company.name}</span>
