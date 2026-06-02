@@ -1,5 +1,5 @@
 {
-  "name": "會會分帳手機 WebApp",
+  "name": "咘咘會計事務所 WebApp",
   "description": "與朋友隨時記帳、雲端多人即時同步、最少轉帳還款算法與公布欄提醒的手機 WebApp",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
