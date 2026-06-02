@@ -325,6 +325,7 @@ function LedgerAppContent() {
               alt="咘咘株式會社"
               className="w-10 h-10 rounded-full object-cover"
             />
+            
             <div>
               <h1 className="text-xs font-black text-[#2A2421] leading-tight flex items-center gap-1">
                 <span>{company.name}</span>
