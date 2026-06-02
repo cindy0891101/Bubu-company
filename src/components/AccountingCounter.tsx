@@ -859,7 +859,7 @@ export default function AccountingCounter() {
             </h3>
 
             <form onSubmit={handleFormSubmit} className="space-y-3">
-              <div className="grid grid-cols-2 gap-2.5">
+              <<div className="grid grid-cols-[2fr_1fr] gap-2.5 items-end">
                 <div>
                   <label className="block text-[10px] font-bold text-gray-500 mb-0.5">
                     💰 消費金額 {splitType === 'custom' && <span className="text-blue-500 font-bold">(自動加總)</span>}
@@ -933,16 +933,38 @@ export default function AccountingCounter() {
                 </div>
                 
                 <div>
-                   <label className="block text-[10px] font-bold text-gray-500 mb-0.5">
-                          📅 日期
-                        </label>
+                  <label className="block text-[10px] font-bold text-gray-500 mb-0.5">
+                    📅 日期
+                  </label>
                 
-                  <input
-                    type="date"
-                    value={selectedDate}
-                    onChange={(e) => setSelectedDate(e.target.value)}
-                    className="w-full h-11 px-2.5 text-xs rounded-lg border border-[#2A2421] bg-white text-[#2A2421] font-bold outline-none"
-                  />
+                  <div className="relative">
+                    <input
+                      type="date"
+                      value={selectedDate}
+                      onChange={(e) => setSelectedDate(e.target.value)}
+                      className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+                    />
+                
+                    <div
+                      className="
+                        w-full
+                        h-11
+                        px-3
+                        rounded-lg
+                        border border-[#2A2421]
+                        bg-white
+                        flex items-center
+                        text-xs
+                        font-bold
+                        text-[#2A2421]
+                      "
+                    >
+                      <div className="flex items-center gap-2">
+                        <Calendar className="w-4 h-4 text-gray-500" />
+                        <span>{selectedDate.replaceAll('-', '/')}</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
       
