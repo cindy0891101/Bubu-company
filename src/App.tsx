@@ -97,7 +97,7 @@ function LedgerAppContent() {
           {/* Whimsical branding head */}
           <div className="text-center space-y-2 mb-6">
             <img
-              src="/logo2.png"
+              src="/logo2.PNG"
               alt="咘咘株式會社"
               className="w-16 h-16 object-contain inline-block animate-bounce"
             />
