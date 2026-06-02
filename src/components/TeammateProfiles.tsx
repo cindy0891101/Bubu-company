@@ -351,7 +351,7 @@ export default function TeammateProfiles() {
                 </div>
                 <div>
                   <label className="block text-[10px] font-bold text-gray-400 mb-0.5">
-                    🟢 LINE Pay ID / 電話
+                    🟢 LINE Pay 名稱
                   </label>
                   <input 
                     type="text"
@@ -471,7 +471,7 @@ export default function TeammateProfiles() {
                 </div>
                 <div>
                   <label className="block text-[10px] font-bold text-gray-400 mb-0.5">
-                    🟢 LINE Pay ID / 電話
+                    🟢 LINE Pay 名稱
                   </label>
                   <input 
                     type="text"
