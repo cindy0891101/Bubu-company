@@ -96,10 +96,14 @@ function LedgerAppContent() {
         >
           {/* Whimsical branding head */}
           <div className="text-center space-y-2 mb-6">
-            <span className="text-5xl inline-block animate-bounce">🏦</span>
+            <img
+              src="/logo.png"
+              alt="咘咘株式會社"
+              className="w-16 h-16 object-contain inline-block animate-bounce"
+            />
             <h1 className="text-2xl font-black text-[#2A2421] tracking-tight">咘咘株式會社</h1>
             <p className="text-xs text-amber-900 font-bold max-w-[280px] mx-auto leading-relaxed">
-              歡迎來到咘咘株式會社，一鍵共享，雲端即時多人同步！
+              歡迎來到咘咘株式會社，一鍵共享，雲端即時同步！
             </p>
           </div>
 
