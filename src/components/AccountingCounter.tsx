@@ -910,7 +910,7 @@ export default function AccountingCounter() {
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-2.5">
+             <div className="grid grid-cols-[45%_55%] gap-2.5 items-end">
                 <div>
                   <label className="block text-[10px] font-bold text-gray-500 mb-0.5">
                     👑 誰付的錢 (墊付款者)
