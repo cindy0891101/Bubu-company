@@ -330,13 +330,13 @@ export default function CompanyBulletin() {
                 <label className="block text-[10px] font-bold text-gray-500 mb-0.5">
                   📅 行程日期
                 </label>
-                <input 
-                  type="date"
-                  value={selectedDate}
-                  onChange={(e) => setSelectedDate(e.target.value)}
-                  className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-[#2A2421] bg-white text-[#2A2421] font-bold outline-none"
-                  required
-                />
+            <input 
+                type="date"
+                value={selectedDate}
+                onChange={(e) => setSelectedDate(e.target.value)}
+                className="block w-full box-border appearance-none px-2.5 py-1.5 text-xs rounded-lg border border-[#2A2421] bg-white text-[#2A2421] font-bold outline-none"
+                required
+              />
               </div>
 
               <div>
@@ -347,7 +347,7 @@ export default function CompanyBulletin() {
                   type="time"
                   value={eventTime}
                   onChange={(e) => setEventTime(e.target.value)}
-                  className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-[#2A2421] bg-white text-[#2A2421] font-mono outline-none"
+                  className="block w-full box-border appearance-none px-2.5 py-1.5 text-xs rounded-lg border border-[#2A2421] bg-white text-[#2A2421] font-mono outline-none"
                   required
                 />
               </div>
