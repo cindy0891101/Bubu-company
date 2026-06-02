@@ -264,7 +264,7 @@ export default function FinancialReports() {
             <span>報表月份切換</span>
           </h3>
           <p className="text-[11px] text-slate-400 font-bold mt-0.5">
-            可點選或選擇切換不同月份，查看該月份之開銷細目、個人分攤與還款理賠進度。
+            可點選或選擇切換不同月份，查看該月份之開銷細目、個人分攤與還款進度。
           </p>
         </div>
         <div className="flex items-center gap-2">
@@ -391,7 +391,7 @@ export default function FinancialReports() {
                       </div>
  
                       <div className="flex justify-between items-center mt-1.5 text-[10px] text-gray-400 font-extrabold">
-                        <span>已還理賠: ${Math.round(prog.repaid).toLocaleString()} 元</span>
+                        <span>已還款: ${Math.round(prog.repaid).toLocaleString()} 元</span>
                         <span>
                           完成百分比:{' '}
                           <span className={prog.progressPct > 100 ? "text-blue-600 font-black" : "text-slate-500"}>
