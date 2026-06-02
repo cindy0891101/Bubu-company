@@ -859,7 +859,7 @@ export default function AccountingCounter() {
             </h3>
 
             <form onSubmit={handleFormSubmit} className="space-y-3">
-              <<div className="grid grid-cols-[2fr_1fr] gap-2.5 items-end">
+              <div className="grid grid-cols-[2fr_1fr] gap-2.5 items-end">
                 <div>
                   <label className="block text-[10px] font-bold text-gray-500 mb-0.5">
                     💰 消費金額 {splitType === 'custom' && <span className="text-blue-500 font-bold">(自動加總)</span>}
