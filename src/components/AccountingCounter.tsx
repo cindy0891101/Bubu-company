@@ -46,10 +46,19 @@ export default function AccountingCounter() {
     myMemberId
   } = useCompany();
 
+    // 日期格式統一函式
+  const formatLocalDate = (date: Date) => {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const d = String(date.getDate()).padStart(2, '0');
+
+    return `${y}-${m}-${d}`;
+  };
+
   // Selected date management
   const [selectedDate, setSelectedDate] = useState<string>(() => {
     const today = new Date();
-    return today.toISOString().split('T')[0];
+    return formatLocalDate(today);
   });
 
   // Calendar Zoom State: 'month' | 'week'
@@ -97,7 +106,7 @@ export default function AccountingCounter() {
 
   const [copiedText, setCopiedText] = useState<string | null>(null);
 
-  const todayStr = new Date().toISOString().split('T')[0];
+  const todayStr = formatLocalDate(new Date());
 
   // Helper date list generators
   const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
@@ -127,7 +136,13 @@ export default function AccountingCounter() {
       return Array.from({ length: daysInMonth }, (_, i) => i + 1);
     } else {
       // Return 7 days centering around the selected day's week
-      const current = new Date(selectedDate + 'T00:00:00');
+      const [year, month, day] = selectedDate.split('-').map(Number);
+
+        const current = new Date(
+          year,
+          month - 1,
+          day
+        );
       const dayOfWeek = current.getDay();
       const startOfWeek = new Date(current);
       startOfWeek.setDate(current.getDate() - dayOfWeek);
@@ -149,7 +164,7 @@ export default function AccountingCounter() {
       const dd = String(dayInfo).padStart(2, '0');
       setSelectedDate(`${currentYear}-${mm}-${dd}`);
     } else {
-      setSelectedDate(dayInfo.toISOString().split('T')[0]);
+      setSelectedDate(formatLocalDate(dayInfo));
       setCurrentMonth(dayInfo.getMonth());
       setCurrentYear(dayInfo.getFullYear());
     }
@@ -486,7 +501,7 @@ export default function AccountingCounter() {
                   isSelected = selectedDate === fullDateStr;
                 } else {
                   dayNum = dayInfo.getDate();
-                  fullDateStr = dayInfo.toISOString().split('T')[0];
+                  fullDateStr = formatLocalDate(dayInfo);
                   isSelected = selectedDate === fullDateStr;
                 }
 
