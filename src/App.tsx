@@ -387,7 +387,7 @@ function LedgerAppContent() {
 
       {/* Gorgeous Responsive Bottom Nav Deck Dock, satisfying requested phone view interfaces (底部導覽按鈕) */}
       <div
-        className="fixed inset-x-0 bottom-0 bg-[#FCF9F2] border-t border-[#2A2421] px-4 z-40 shadow-md"
+        className="fixed inset-x-0 bottom-0 bg-[#FCF9F2] border-t border-[#2A2421] pt-2 px-4 z-40 shadow-md"
         style={{  paddingBottom: 'max(8px, env(safe-area-inset-bottom))'   }} >
         <div className="max-w-md mx-auto flex justify-between items-center">
           
