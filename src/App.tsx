@@ -241,7 +241,7 @@ function LedgerAppContent() {
             <span className="text-3xl">🙋🏻‍♀️</span>
             <h2 className="text-base font-black text-[#2A2421]">確認您在本會社中的身份</h2>
             <p className="text-[11px] text-slate-400 font-bold">
-              您已進入「<b>{company.name}</b>」。在拆帳記帳前，請幫我們選取或建立一張您的成員名片：
+              您已進入「<b>{company.name}</b>」。在拆帳記帳前，請幫我們選取或建立一張您的名片：
             </p>
           </div>
 
