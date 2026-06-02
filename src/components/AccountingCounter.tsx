@@ -383,11 +383,24 @@ export default function AccountingCounter() {
     }
   };
 
-  const copyLinePay = (payee: any) => {
-    const info = payee?.linePayInfo || payee?.name || "";
-    navigator.clipboard.writeText(info);
-    setCopiedText(payee.id);
-    setTimeout(() => setCopiedText(null), 1800);
+  const copyLinePay = async (payee: any) => {
+  const info = payee?.linePayInfo || payee?.name || "";
+
+    try {
+      await navigator.clipboard.writeText(info);
+  
+      setCopiedText(payee.id);
+      setTimeout(() => setCopiedText(null), 1800);
+  
+      setTimeout(() => {
+        window.location.href = "line://";
+      }, 300);
+  
+    } catch (err) {
+      console.error(err);
+  
+      window.location.href = "line://";
+    }
   };
 
   const toggleSplitCheck = (mId: string) => {
@@ -421,7 +434,7 @@ export default function AccountingCounter() {
             <div className="flex justify-between items-center mb-3">
               <h3 className="text-base font-bold text-[#2A2421] flex items-center gap-1.5">
                 <Calendar className="w-4.5 h-4.5 text-amber-500" />
-                <span>會會記帳簿</span>
+                <span>把餔記帳簿</span>
               </h3>
               
               <div className="flex items-center gap-1.5">
@@ -673,11 +686,8 @@ export default function AccountingCounter() {
           <div className="bg-[#A3B19B] p-4 rounded-2xl border-2 border-[#2A2421] shadow-[2px_2px_0px_0px_#2A2421]">
             <h3 className="text-base font-black text-[#2A2421] mb-1.5 flex items-center gap-1.5">
               <Coins className="w-4.5 h-4.5 text-emerald-600" />
-              <span>最少轉帳速算方案</span>
+              <span>結算方案</span>
             </h3>
-            <p className="text-[11px] text-slate-700 leading-relaxed mb-3 font-semibold">
-              系統已自動統計所有會社日常開銷分攤比例，並利用演算法整合各成員間的往來債務，推算出最少的轉帳次數。
-            </p>
 
             <div className="space-y-2.5">
               {simplifiedDebts.length === 0 ? (
