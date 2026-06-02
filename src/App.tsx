@@ -313,7 +313,7 @@ function LedgerAppContent() {
 
   // 💎 STAGE 3: Main dashboard shell view
   return (
-    <div className="min-h-screen pb-28 bg-[#F8F5EE]">
+    <div className="min-h-screen pb-20 bg-[#F8F5EE]">
       
       {/* Upper Cozy Navbar banner (頂部小看版) */}
       <header className="bg-[#FCF9F2] border-b border-[#2A2421] sticky top-0 z-30 px-4 py-2.5 shadow-sm">
@@ -382,7 +382,7 @@ function LedgerAppContent() {
       </main>
 
       {/* Gorgeous Responsive Bottom Nav Deck Dock, satisfying requested phone view interfaces (底部導覽按鈕) */}
-      <div className="fixed bottom-0 inset-x-0 bg-[#FCF9F2] border-t border-[#2A2421] py-2 px-4 z-40 shadow-md">
+      <div className="fixed bottom-2 inset-x-0 bg-[#FCF9F2] border-t border-[#2A2421] py-2 px-4 z-40 shadow-md">
         <div className="max-w-md mx-auto flex justify-between items-center">
           
           <button
