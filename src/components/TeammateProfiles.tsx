@@ -157,8 +157,8 @@ export default function TeammateProfiles() {
               let deptColor = "bg-gray-100 border-gray-300 text-gray-600";
               if (m.roleGroup === "財務") deptColor = "bg-amber-100 border-amber-300 text-amber-700 font-black";
               if (m.roleGroup === "營運") deptColor = "bg-emerald-100 border-emerald-300 text-emerald-700 font-black";
-              if (m.roleGroup === "設計") deptColor = "bg-rose-100 border-rose-300 text-rose-700 font-black";
-              if (m.roleGroup === "技術") deptColor = "bg-sky-100 border-sky-300 text-sky-700 font-black";
+              if (m.roleGroup === "股東") deptColor = "bg-rose-100 border-rose-300 text-rose-700 font-black";
+              if (m.roleGroup === "貴賓") deptColor = "bg-sky-100 border-sky-300 text-sky-700 font-black";
 
               return (
                 <div 
