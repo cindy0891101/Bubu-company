@@ -103,7 +103,7 @@ function LedgerAppContent() {
             />
             <h1 className="text-2xl font-black text-[#2A2421] tracking-tight">咘咘會計事務所</h1>
             <p className="text-xs text-amber-900 font-bold max-w-[280px] mx-auto leading-relaxed">
-              歡迎來到咘咘會計事務所，一鍵共享，雲端即時同步！
+              歡迎來到咘咘會計事務所，共享雲端即時同步！
             </p>
           </div>
 
