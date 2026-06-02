@@ -874,8 +874,8 @@ export default function AccountingCounter() {
                       }
                     }}
                     readOnly={splitType === 'custom'}
-                    className={`w-full px-2.5 py-1.5 text-xs rounded-lg border border-[#2A2421] text-[#2A2421] font-black outline-none ${
-                      splitType === 'custom' ? 'bg-blue-50 border-blue-300' : 'bg-white'
+                     className={`w-full h-11 px-2.5 text-xs rounded-lg border border-[#2A2421] text-[#2A2421] font-black outline-none ${
+                        splitType === 'custom' ? 'bg-blue-50 border-blue-300' : 'bg-white'
                     }`}
                     required
                   />
@@ -885,10 +885,10 @@ export default function AccountingCounter() {
                     🏷️ 費用種類
                   </label>
                   <select
-                    value={category}
-                    onChange={(e) => setCategory(e.target.value)}
-                    className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-[#2A2421] bg-white text-[#2A2421] font-bold outline-none"
-                  >
+                      value={category}
+                      onChange={(e) => setCategory(e.target.value)}
+                      className="w-full h-11 px-2.5 text-xs rounded-lg border border-[#2A2421] bg-white text-[#2A2421] font-bold outline-none appearance-none"
+                    >
                     {CATEGORIES.map(c => (
                       <option key={c.name} value={c.name}>{c.icon} {c.name}</option>
                     ))}
@@ -910,7 +910,7 @@ export default function AccountingCounter() {
                 />
               </div>
 
-            <div className="grid grid-cols-2 gap-2.5 items-end">
+            <div className="grid grid-cols-[1fr_1.2fr] gap-2.5 items-end">
 
   <div className="min-w-0">
     <label className="block text-[10px] font-bold text-gray-500 mb-0.5">
@@ -936,11 +936,11 @@ export default function AccountingCounter() {
     </label>
 
     <input
-      type="date"
-      value={selectedDate}
-      onChange={(e) => setSelectedDate(e.target.value)}
-      className="w-full h-11 px-2.5 text-xs rounded-lg border border-[#2A2421] bg-white text-[#2A2421] font-bold outline-none"
-    />
+          type="date"
+          value={selectedDate}
+          onChange={(e) => setSelectedDate(e.target.value)}
+          className="w-full h-11 px-2 text-[11px] rounded-lg border border-[#2A2421] bg-white text-[#2A2421] font-bold outline-none"
+        />
   </div>
 
 </div>
