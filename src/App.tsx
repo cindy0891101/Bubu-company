@@ -98,12 +98,12 @@ function LedgerAppContent() {
           <div className="text-center space-y-2 mb-6">
             <img
               src="/logo2.PNG"
-              alt="咘咘株式會社"
+              alt="咘咘會計事務所"
               className="w-16 h-16 object-contain inline-block animate-bounce"
             />
-            <h1 className="text-2xl font-black text-[#2A2421] tracking-tight">咘咘株式會社</h1>
+            <h1 className="text-2xl font-black text-[#2A2421] tracking-tight">咘咘會計事務所</h1>
             <p className="text-xs text-amber-900 font-bold max-w-[280px] mx-auto leading-relaxed">
-              歡迎來到咘咘株式會社，一鍵共享，雲端即時同步！
+              歡迎來到咘咘會計事務所，一鍵共享，雲端即時同步！
             </p>
           </div>
 
@@ -178,7 +178,7 @@ function LedgerAppContent() {
                     </label>
                     <input 
                       type="text" 
-                      placeholder="例如: 咘咘株式會社"
+                      placeholder="例如: 咘咘會計事務所"
                       value={newCompanyName}
                       onChange={(e) => setNewCompanyName(e.target.value)}
                       className="w-full px-3 py-1.5 text-xs border border-[#2A2421] rounded-xl bg-white font-bold text-[#2A2421] outline-none"
@@ -326,7 +326,7 @@ function LedgerAppContent() {
           <div className="flex items-center gap-1.5">
            <img
               src="/logo.png"
-              alt="咘咘株式會社"
+              alt="咘咘會計事務所"
               className="w-10 h-10 rounded-full object-cover"
             />
             
