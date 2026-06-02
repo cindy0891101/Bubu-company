@@ -912,8 +912,8 @@ export default function AccountingCounter() {
 
             <div className="grid grid-cols-2 gap-2.5 items-end">
                 <div>
+                     <div className="min-w-0">
                   <label className="block text-[10px] font-bold text-gray-500 mb-0.5">
-                    <div className="min-w-0">
                     👑 誰付的錢 (墊付款者)
                   </label>
                   <select
@@ -927,8 +927,8 @@ export default function AccountingCounter() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-[10px] font-bold text-gray-500 mb-0.5">
-                    <div className="min-w-0">
+                      <div className="min-w-0">
+                      <label className="block text-[10px] font-bold text-gray-500 mb-0.5">
                     📅 日期
                   </label>
                   <input
