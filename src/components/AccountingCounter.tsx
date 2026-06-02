@@ -911,33 +911,39 @@ export default function AccountingCounter() {
               </div>
 
             <div className="grid grid-cols-2 gap-2.5 items-end">
-                     <div className="min-w-0">
-                  <label className="block text-[10px] font-bold text-gray-500 mb-0.5">
-                    👑 誰付的錢 (墊付款者)
-                  </label>
-                  <select
-                      value={payerId}
-                      onChange={(e) => setPayerId(e.target.value)}
-                      className="w-full h-11 px-2.5 text-xs rounded-lg border border-[#2A2421] bg-white text-[#2A2421] font-bold outline-none"
-                    >
-                    {members.map(m => (
-                      <option key={m.id} value={m.id}>{m.avatarUrl} {m.name}</option>
-                    ))}
-                  </select>
-                </div>
-                <div>
-                      <div className="min-w-0">
-                      <label className="block text-[10px] font-bold text-gray-500 mb-0.5">
-                    📅 日期
-                  </label>
-                  <input
-                    type="date"
-                    value={selectedDate}
-                    onChange={(e) => setSelectedDate(e.target.value)}
-                    className="w-full h-11 px-2.5 text-xs rounded-lg border border-[#2A2421] bg-white text-[#2A2421] font-bold outline-none"
-                   />
-                </div>
-              </div>
+
+  <div className="min-w-0">
+    <label className="block text-[10px] font-bold text-gray-500 mb-0.5">
+      👑 誰付的錢 (墊付款者)
+    </label>
+
+    <select
+      value={payerId}
+      onChange={(e) => setPayerId(e.target.value)}
+      className="w-full h-11 px-2.5 text-xs rounded-lg border border-[#2A2421] bg-white text-[#2A2421] font-bold outline-none"
+    >
+      {members.map(m => (
+        <option key={m.id} value={m.id}>
+          {m.avatarUrl} {m.name}
+        </option>
+      ))}
+    </select>
+  </div>
+
+  <div className="min-w-0">
+    <label className="block text-[10px] font-bold text-gray-500 mb-0.5">
+      📅 日期
+    </label>
+
+    <input
+      type="date"
+      value={selectedDate}
+      onChange={(e) => setSelectedDate(e.target.value)}
+      className="w-full h-11 px-2.5 text-xs rounded-lg border border-[#2A2421] bg-white text-[#2A2421] font-bold outline-none"
+    />
+  </div>
+
+</div>
 
               {/* Split Method Toggle (分攤方式切換) */}
               <div>
